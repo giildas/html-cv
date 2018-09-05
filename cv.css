@@ -51,3 +51,37 @@ header a {
   color: #fff;
   text-decoration: none;
 }
+
+/*****************************************************\
+COMPETENCES
+\*****************************************************/
+
+#skills {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr;
+  grid-gap: 10px;
+}
+
+#skills .skill {
+  padding: 5px;
+  /* background: #b490ca; */
+  background : linear-gradient(-45deg, #5ee7df, #b490ca);
+  display: flex;
+  flex-direction: column;
+}
+#skills .skill:last-child {
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+#skills .skill h3{
+  margin: 0;
+  padding-bottom: 3px;
+  color: #fff;
+}
+#skills .skill .skill-content{
+  padding: 10px 5px;
+  background: #FFF;
+  flex-grow: 1;
+}
+
