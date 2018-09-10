@@ -8,13 +8,32 @@ html, body {
   color: #292929;
 }
 .page {
+  background : linear-gradient(-45deg, #5ee7df, #b490ca);
   height: 29.7cm;
   width: 21cm;
   margin: auto;
-  padding: 1.5cm 1cm;
+  /* padding: 1.5cm 1cm; */
+  border: 1.5cm solid #FFF;
+  border-width: 1.5cm 1cm;
+
 }
+
+/*****************************************************\
+GENERAL
+\*****************************************************/
+
+.page > h1 {
+  background: #FFF;
+  margin: 0;
+  padding: 10px 0;
+  -webkit-background-clip: text;
+}
+/*****************************************************\
+HEADER
+\*****************************************************/
+
+
 header {
-  background : linear-gradient(-45deg, #5ee7df, #b490ca);
   color: #fff;
   display: flex;
   align-items: center;
@@ -62,28 +81,44 @@ COMPETENCES
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
+  /* background: #F00; */
 }
 
 #skills .skill {
-  padding: 5px;
-  /* background: #b490ca; */
-  background : linear-gradient(-45deg, #5ee7df, #b490ca);
   display: flex;
   flex-direction: column;
-}
-#skills .skill:last-child {
-  /* grid-column-start: 2;
-  grid-column-end: span 2; */
+  border: 5px solid #FFF;
 }
 
+
+#skills .skill:first-child {
+  border-left : none;
+  border-top : none;
+}
+#skills .skill:nth-child(2) {
+  border-top : none;
+  border-right : none;
+}
+#skills .skill:nth-child(3) {
+  border-bottom : none;
+  border-left : none;
+}
+#skills .skill:last-child {
+  border-right : none;
+  border-bottom : none;
+}
+
+
 #skills .skill h3{
-  margin: 0;
+  margin: 5px;
+  margin-bottom: 2px;
   padding-bottom: 3px;
   color: #fff;
 }
 #skills .skill .skill-content{
   padding: 10px 5px;
+  margin: 0 5px 5px;
   background: #FFF;
   flex-grow: 1;
 }
