@@ -27,6 +27,8 @@ header img {
   width: 3cm;
   height: 3cm;
   border-radius: 50%;
+  background: #FFF;
+  margin-left: .5cm;
 }
 header .titles h1,
 header .titles h2 {
@@ -88,5 +90,5 @@ COMPETENCES
 
 #skills .skill .skill-content [class^='fa']{
   color: #b490ca;
-  width: 25px;
+  width: 1.8rem;
 }
