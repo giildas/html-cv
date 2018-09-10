@@ -5,6 +5,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "DejaVu Sans", serif;
+  color: #292929;
 }
 .page {
   height: 29.7cm;
@@ -58,7 +59,7 @@ COMPETENCES
 
 #skills {
   display: grid;
-  grid-template-columns: 1.5fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
@@ -70,8 +71,8 @@ COMPETENCES
   flex-direction: column;
 }
 #skills .skill:last-child {
-  grid-column-start: 2;
-  grid-column-end: span 2;
+  /* grid-column-start: 2;
+  grid-column-end: span 2; */
 }
 
 #skills .skill h3{
@@ -85,3 +86,7 @@ COMPETENCES
   flex-grow: 1;
 }
 
+#skills .skill .skill-content [class^='fa']{
+  color: #b490ca;
+  width: 25px;
+}
