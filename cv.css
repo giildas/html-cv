@@ -16,6 +16,7 @@ html, body {
   /* padding: 1.5cm 1cm; */
   border: 1.5cm solid #FFF;
   border-width: 1cm 1cm;
+  position: relative;
 
 }
 
@@ -203,4 +204,14 @@ EXPERIENCES
   background: #FFF;
   padding: 3px;
   flex-grow: 1;
+}
+
+
+footer {
+  font-size: 0.5em;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
