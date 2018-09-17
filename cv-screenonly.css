@@ -4,3 +4,7 @@
     0px 0px 0px 1px grey,
     6px 6px 0px 0px #CCC;
 }
+
+footer {
+  border: 1px solid red;
+}

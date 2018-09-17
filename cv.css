@@ -1,4 +1,10 @@
+/*****************************************************\
+GENERAL
+\*****************************************************/
+
+
 * { box-sizing: border-box; }
+
 html, body {
   width: 100%;
   height: 100%;
@@ -8,22 +14,22 @@ html, body {
   color: #292929;
   font-size: 10pt;
 }
+
 .page {
   background : linear-gradient(-45deg, #5ee7df, #b490ca);
   height: 29.7cm;
   width: 21cm;
   margin: auto;
-  /* padding: 1.5cm 1cm; */
   border: 1.5cm solid #FFF;
   border-width: 1cm 1cm;
   position: relative;
 
+  display: flex;
+  flex-direction: column;
 }
-
-/*****************************************************\
-GENERAL
-\*****************************************************/
-
+page > * {
+  border: 1px solid red;
+}
 .page > section {
   border-top: 10px solid #FFF;
 }
@@ -37,6 +43,15 @@ GENERAL
 
 .page a {
   color: #000;
+}
+
+hr {
+  display: inline;
+  border: none;
+  color: #ccc;
+}
+hr::before {
+  content: " /// ";
 }
 /*****************************************************\
 HEADER
@@ -141,11 +156,6 @@ COMPETENCES
 EXPERIENCES
 \*****************************************************/
 
-#experiences h3{
-}
-
-#experiences .exp {
-}
 #experiences .exp h3 {
   display: flex;
   margin: 0;
@@ -168,50 +178,87 @@ EXPERIENCES
   background: #fff;
   padding: 5px 0 10px 0;
 }
-#experiences .exp .exp-content hr {
-  display: inline;
-  border: none;
-  color: #ccc;
-}
-#experiences .exp .exp-content hr::before {
-  content: " /// ";
-}
 
 #bottom {
   display: grid;
   grid-template-columns: 1fr 2fr;
-
 }
 
+#bottom h2 {
+  color: #fff;
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+
+#autre {
+  padding: 5px;
+}
+#autre ul {
+  margin: 0;
+  padding: 0;
+}
+#autre ul li {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 4px;
+}
+#autre hr {
+  color: #fff;
+}
 
 #formation {
   border-left: 5px solid #FFF;
   text-align: right;
+  padding: 5px;
 }
 
 #formation .form {
   display: flex;
   flex-direction: row-reverse;
-  margin: 5px;
+  margin: 5px 0;
 }
+#formation .form span {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 #formation .form span:first-child { /* date */
   display: inline-block;
-  width: 100px;
+  /* width: 100px; */
   padding: 0 3px;
+  margin-left: 20px;
   text-align: right;
+  font-weight: bold;
+  color: #fff;
+  /* border: 1px solid red; */
 }
 #formation .form span:last-child { /* title */
+  position: relative;
   background: #FFF;
   padding: 3px;
   flex-grow: 1;
+  justify-content: flex-start;
+
+}
+#formation .form span:last-child::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #ffffff;
 }
 
-
 footer {
-  font-size: 0.5em;
-  text-align: right;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  background: #fff;
+  flex-grow: 1;
 }
