@@ -16,7 +16,6 @@ html, body {
 }
 
 .page {
-  background : linear-gradient(-45deg, #5ee7df, #b490ca);
   height: 29.7cm;
   width: 21cm;
   margin: auto;
@@ -26,10 +25,10 @@ html, body {
 
   display: flex;
   flex-direction: column;
+
+  background : linear-gradient(-45deg, #5ee7df, #b490ca);
 }
-page > * {
-  border: 1px solid red;
-}
+
 .page > section {
   border-top: 10px solid #FFF;
 }
@@ -196,6 +195,9 @@ EXPERIENCES
 
 #autre {
   padding: 5px;
+}
+#autre strong {
+  color: #fff;
 }
 #autre ul {
   margin: 0;
