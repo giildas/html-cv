@@ -2,6 +2,9 @@
 GENERAL
 \*****************************************************/
 
+:root {
+  --bg-color: #b490ca;
+}
 
 * { box-sizing: border-box; }
 
@@ -15,30 +18,19 @@ html, body {
   font-size: 10pt;
 }
 
+
 .page {
   height: 29.7cm;
   width: 21cm;
   margin: auto;
-  border: 1.5cm solid #FFF;
-  border-width: 1cm 1cm;
+  padding: 1cm;
   position: relative;
 
   display: flex;
   flex-direction: column;
-
-  background : linear-gradient(-45deg, #5ee7df, #b490ca);
+  justify-content: space-between;
 }
 
-/* .page > section {
-  border-top: 10px solid #FFF;
-} */
-.page > h1 {
-  background: #FFF;
-  margin: 0;
-  /* padding: 10px 0; */
-  font-size: 1em;
-  display: none;
-}
 
 .page a {
   color: #000;
@@ -52,17 +44,28 @@ hr {
 hr::before {
   content: " /// ";
 }
+
+header, section {
+  margin-bottom: 8mm;
+  /* border: 1px solid red; */
+}
+section:last-of-type {
+  margin-bottom: 0;
+}
 /*****************************************************\
 HEADER
 \*****************************************************/
 
 
 header {
+  background: var(--bg-color);
+  background : linear-gradient(-45deg, #8BB8D4, #b490ca);
+
   color: #fff;
   display: flex;
+  flex-direction: row;
   align-items: center;
   padding: .3cm;
-  flex-direction: row;
 }
 
 header img {
@@ -104,86 +107,96 @@ COMPETENCES
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: .3cm solid #FFF;
-  border-bottom: .3cm solid #FFF;
+  grid-gap: .3cm;
 }
 
 #skills .skill {
   display: flex;
   flex-direction: column;
-  border: 0.5mm solid #FFF;
-}
-
-
-#skills .skill:first-child {
-  border-left : none;
-  border-top : none;
-}
-#skills .skill:nth-child(2) {
-  border-top : none;
-  border-right : none;
-}
-#skills .skill:nth-child(3) {
-  border-bottom : none;
-  border-left : none;
-}
-#skills .skill:last-child {
-  border-right : none;
-  border-bottom : none;
 }
 
 #skills .skill h3{
-  margin: 1.3mm;
-  margin-bottom: 0.5mm;
-  padding-bottom: 0.8mm;
   color: #fff;
+  background: var(--bg-color);
+  background: #9BA8D0;
   font-size: 1em;
-  /* flex-grow: 1; */
-}
-#skills .skill .skill-content{
-  padding: 10px 5px;
-  padding: .25cm .15cm;
+  padding: 1mm 2mm;
   margin: 0;
-  background: rgba(255, 255, 255, 1);
-  flex-grow: 1;
-
+  margin-bottom: 2mm;
 }
 
 #skills .skill .skill-content [class^='fa']{
-  color: #b490ca;
-  width: 1.8rem;
+  color: #9AABD1;
+  width: .7cm;
 }
+
+#skills .skill:nth-child(1) h3 {
+  /* background: #A4A0CE; */
+  background : linear-gradient(-45deg, #9AABD0, #A69ECD);
+
+}
+#skills .skill:nth-child(2) h3 {
+  /* background: #94B0D1; */
+  background : linear-gradient(-45deg, #8EB8D3, #9AAAD0);
+
+}
+#skills .skill:nth-child(3) h3 {
+  /* background: #9EA6CF; */
+  background : linear-gradient(-45deg, #94B1D3, #9FA4CF);
+
+}
+#skills .skill:nth-child(4) h3 {
+  /* background: #8EB6D3; */
+  background : linear-gradient(-45deg, #88BDD5, #93B2D2);
+
+}
+
+
+
 
 /*****************************************************\
 EXPERIENCES
 \*****************************************************/
 
-#experiences .exp {
-}
 #experiences .exp h3 {
   display: flex;
   margin: 0;
   padding: 0;
-  align-items: center;
   font-size: 1em;
 }
 #experiences .exp .exp-date {
   color: #fff;
-  padding: 0 5px;
+  padding: 1mm;
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
 }
 
 #experiences .exp .exp-title {
-  background: #fff;
-  margin-top: 2px;
-  /* margin: 0; */
-  padding: 5px 10px;
+  padding:  1mm;
+  border-top: .5mm solid var(--bg-color);
   flex-grow: 1;
-
 }
 #experiences .exp .exp-content {
-  background: #fff;
-  padding: 5px 0 20px 0;
+  margin-top : 1.5mm;
+  margin-bottom: 4mm;
 }
+#experiences .exp:last-child .exp-content {
+  margin-bottom: 0;
+}
+
+#experiences .exp:nth-child(1) .exp-title  { border-color: #97AED1;}
+#experiences .exp:nth-child(1) .exp-date { background: #97AED1;}
+#experiences .exp:nth-child(2) .exp-title  { border-color: #91B3D2;}
+#experiences .exp:nth-child(2) .exp-date { background: #91B3D2;}
+#experiences .exp:nth-child(3) .exp-title  { border-color: #8CB8D3;}
+#experiences .exp:nth-child(3) .exp-date { background: #8CB8D3;}
+#experiences .exp:nth-child(4) .exp-title  { border-color: #87BDD5;}
+#experiences .exp:nth-child(4) .exp-date { background: #87BDD5;}
+#experiences .exp:nth-child(5) .exp-title  { border-color: #83C2D6;}
+#experiences .exp:nth-child(5) .exp-date { background: #83C2D6;}
+#experiences .exp:nth-child(6) .exp-title  { border-color: #7EC6D7;}
+#experiences .exp:nth-child(6) .exp-date { background: #7EC6D7;}
 
 
 /*****************************************************\
@@ -191,6 +204,8 @@ BOTTOM PART
 \*****************************************************/
 
 #bottom {
+  background : linear-gradient(-45deg, #5ee7df, #81C3D6);
+
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
@@ -208,8 +223,8 @@ BOTTOM PART
 AUTRE INFOS
 \*****************************************************/
 
-
 #autre {
+  /* background: var(--bg-color); */
   padding: 5px;
 }
 #autre strong {
@@ -234,15 +249,16 @@ FORMATION
 \*****************************************************/
 
 #formation {
-  border-left: 5px solid #FFF;
+  border-left: 1mm solid #FFF;
   text-align: right;
-  padding: 5px;;
+  padding: 5px;
+  /* background: var(--bg-color); */
 }
 
 #formation .form {
   display: flex;
   flex-direction: row-reverse;
-  margin: 5px 0;
+  margin: 1.2mm 0;
 }
 #formation .form span {
   height: 20px;
@@ -286,6 +302,6 @@ FOOTER = remaining space : color in white
 \*****************************************************/
 
 footer {
-  background: #fff;
+  /* display: none; */
   flex-grow: 1;
 }
