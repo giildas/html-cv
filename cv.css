@@ -7,65 +7,81 @@ GENERAL
 }
 
 * { box-sizing: border-box; }
-
-html, body {
+html {
   width: 100%;
   height: 100%;
-  margin: 0;
+  padding: 0;
+
+}
+body {
   padding: 0;
   font-family: "DejaVu Sans", serif;
   color: #292929;
   font-size: 10pt;
-}
-
-
-.page {
   height: 29.7cm;
   width: 21cm;
-  margin: auto;
   padding: 1cm;
-  position: relative;
+}
+
+.page {
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* border: 1px solid darkgreen; */
 }
 
-
-.page a {
-  color: #000;
-}
+.page a { color: #000; }
 
 hr {
   display: inline;
   border: none;
   color: #ccc;
 }
-hr::before {
-  content: " /// ";
-}
+hr::before { content: " /// "; }
 
-header, section {
-  margin-bottom: 8mm;
-  /* border: 1px solid red; */
-}
-section:last-of-type {
-  margin-bottom: 0;
-}
+header, section { margin-bottom: 4mm; }
+section:last-of-type { margin-bottom: 0; }
+
 /*****************************************************\
 HEADER
 \*****************************************************/
 
-
 header {
-  background: var(--bg-color);
-  background : linear-gradient(-45deg, #8BB8D4, #b490ca);
-
-  color: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: .3cm;
+  background : linear-gradient(-45deg, #8BB8D4, #b490ca);
+  color: #fff;
+  flex-shrink: 0;
+  padding: 0.3cm;
+}
+
+header h1, header h2 { margin: 0; }
+header h1 {
+  text-transform: uppercase;
+  font-size: 2.3em;
+  border: 1.6mm solid #FFF;
+  border-left: none;
+  border-right: none;
+  padding: 1.2mm 0mm;
+}
+header h2 { font-size: 1.9em; }
+header ul {
+  order: 0;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  flex-grow: 2;
+}
+header ul li {
+  list-style: none;
+  margin: 1mm 0;
+}
+header a {
+  color: #fff !important;
+  text-decoration: none;
 }
 
 header img {
@@ -75,30 +91,6 @@ header img {
   background: #FFF;
   margin-left: .5cm;
 }
-header .titles h1,
-header .titles h2 {
-  margin: 0;
-  padding: 0;
-}
-header .titles h1 {
-  text-transform: uppercase;
-  margin-top: 0.3cm;
-}
-
-header ul  {
-  order: 0;
-  flex-grow: 2;
-  padding: 0;
-  margin: 0;
-  text-align: right;
-}
-header ul li {
-  list-style: none;
-}
-header a {
-  color: #fff !important;
-  text-decoration: none;
-}
 
 /*****************************************************\
 COMPETENCES
@@ -107,7 +99,7 @@ COMPETENCES
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: .6cm .3cm;
+  grid-gap: 3mm;
 }
 
 #skills .skill {
@@ -119,7 +111,7 @@ COMPETENCES
   color: #fff;
   background: var(--bg-color);
   background: #9BA8D0;
-  font-size: 1em;
+  font-size: 1.17em;
   padding: 1mm 2mm;
   margin: 0;
   margin-bottom: 2mm;
@@ -130,29 +122,20 @@ COMPETENCES
   width: .7cm;
 }
 
-#skills .skill:nth-child(1) h3 {
-  /* background: #A4A0CE; */
-  background : linear-gradient(-45deg, #9AABD0, #A69ECD);
+#skills .skill .skill-content{ line-height: 1.35em; }
 
+#skills .skill:nth-child(1) h3 {
+  background : linear-gradient(-45deg, #9AABD0, #A69ECD);
 }
 #skills .skill:nth-child(2) h3 {
-  /* background: #94B0D1; */
   background : linear-gradient(-45deg, #8EB8D3, #9AAAD0);
-
 }
 #skills .skill:nth-child(3) h3 {
-  /* background: #9EA6CF; */
   background : linear-gradient(-45deg, #94B1D3, #9FA4CF);
-
 }
 #skills .skill:nth-child(4) h3 {
-  /* background: #8EB6D3; */
   background : linear-gradient(-45deg, #88BDD5, #93B2D2);
-
 }
-
-
-
 
 /*****************************************************\
 EXPERIENCES
@@ -178,7 +161,8 @@ EXPERIENCES
 }
 #experiences .exp .exp-content {
   margin-top : 2mm;
-  margin-bottom: 5mm;
+  margin-bottom: 4.5mm;
+  line-height: 1.35em;
 }
 #experiences .exp:last-child .exp-content {
   margin-bottom: 0;
