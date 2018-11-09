@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CV 2018 Gildas PIERRE</title>
+  <title>CV_Gildas_PIERRE</title>
   <link rel="stylesheet" href="cv.css">
   <link rel="stylesheet" href="cv-screenonly.css" media="screen">
   <link rel="stylesheet" href="./fontawesome/all.css">
@@ -17,7 +17,7 @@
         <h1>Développeur<br />frontend</h1>
       </div>
       <ul>
-        <li>32 ans</li>
+        <li><span id="age"></span> ans</li>
         <li>06 64 15 26 17</li>
         <li><a href="mailto:giildas@gmail.com">giildas@gmail.com</a></li>
         <li><a href="https://github.com/giildas">https://github.com/giildas</a></li>
@@ -189,5 +189,19 @@
 
     <footer></footer>
   </div> <!-- /page -->
+
+  <script>
+    document
+      .querySelector('#age')
+      .innerText = calculateAge(new Date(1986, 0, 9))
+
+
+    function calculateAge(birthday) { // birthday is a date
+      var ageDifMs = Date.now() - birthday.getTime();
+      var ageDate = new Date(ageDifMs); // miliseconds from epoch
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+
+  </script>
 </body>
 </html>

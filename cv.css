@@ -107,7 +107,7 @@ COMPETENCES
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: .3cm;
+  grid-gap: .6cm .3cm;
 }
 
 #skills .skill {
@@ -169,17 +169,16 @@ EXPERIENCES
   padding: 1mm;
   display: flex;
   align-items: center;
-  background: var(--bg-color);
 }
 
 #experiences .exp .exp-title {
   padding:  1mm;
-  border-top: .5mm solid var(--bg-color);
+  border-top: .5mm solid;
   flex-grow: 1;
 }
 #experiences .exp .exp-content {
-  margin-top : 1.5mm;
-  margin-bottom: 4mm;
+  margin-top : 2mm;
+  margin-bottom: 5mm;
 }
 #experiences .exp:last-child .exp-content {
   margin-bottom: 0;
@@ -298,10 +297,9 @@ FORMATION
 }
 
 /*****************************************************\
-FOOTER = remaining space : color in white
+FOOTER = remaining space
 \*****************************************************/
 
 footer {
-  /* display: none; */
   flex-grow: 1;
 }
