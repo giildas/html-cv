@@ -1,8 +1,9 @@
-body {
+.page {
   /* border: 1px solid grey; */
   box-shadow:
     0px 0px 0px 1px grey,
     6px 6px 0px 0px #CCC;
+    margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
 }

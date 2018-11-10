@@ -7,29 +7,27 @@ GENERAL
 }
 
 * { box-sizing: border-box; }
-html {
+html, body {
   width: 100%;
   height: 100%;
-  padding: 0;
-
+  margin: 0;
 }
+
 body {
   padding: 0;
   font-family: "DejaVu Sans", serif;
   color: #292929;
   font-size: 10pt;
-  height: 29.7cm;
-  width: 21cm;
-  padding: 1cm;
 }
 
 .page {
-  height: 100%;
+  height: 29.7cm;
+  width: 21cm;
+  padding: 1cm;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border: 1px solid darkgreen; */
 }
 
 .page a { color: #000; }
@@ -187,10 +185,11 @@ BOTTOM PART
 \*****************************************************/
 
 #bottom {
-  background : linear-gradient(-45deg, #5ee7df, #81C3D6);
+  /* background : linear-gradient(-45deg, #5ee7df, #81C3D6); */
 
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-gap: 3mm;
 }
 
 #bottom h2 {
@@ -207,12 +206,10 @@ AUTRE INFOS
 \*****************************************************/
 
 #autre {
-  /* background: var(--bg-color); */
+  background : linear-gradient(-45deg, #72D3DA, #81C3D6);
   padding: 5px;
 }
-#autre strong {
-  color: #fff;
-}
+#autre strong { color: #fff; }
 #autre ul {
   margin: 0;
   padding: 0;
@@ -222,9 +219,7 @@ AUTRE INFOS
   margin: 0;
   margin-bottom: 4px;
 }
-#autre hr {
-  color: #fff;
-}
+#autre hr { color: #fff; }
 
 
 /*****************************************************\
@@ -232,7 +227,9 @@ FORMATION
 \*****************************************************/
 
 #formation {
-  border-left: 1mm solid #FFF;
+  background : linear-gradient(-45deg, #5EE7DF, #77CED9);
+
+  /* border-left: 1mm solid #FFF; */
   text-align: right;
   padding: 5px;
   /* background: var(--bg-color); */
