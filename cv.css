@@ -2,13 +2,18 @@
 GENERAL
 \*****************************************************/
 
+:root {
+  --bg-color: #b490ca;
+}
 
 * { box-sizing: border-box; }
-
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
+}
+
+body {
   padding: 0;
   font-family: "DejaVu Sans", serif;
   color: #292929;
@@ -18,51 +23,63 @@ html, body {
 .page {
   height: 29.7cm;
   width: 21cm;
-  margin: auto;
-  border: 1.5cm solid #FFF;
-  border-width: 1cm 1cm;
-  position: relative;
+  padding: 1cm;
 
   display: flex;
   flex-direction: column;
-
-  background : linear-gradient(-45deg, #5ee7df, #b490ca);
+  justify-content: space-between;
 }
 
-/* .page > section {
-  border-top: 10px solid #FFF;
-} */
-.page > h1 {
-  background: #FFF;
-  margin: 0;
-  /* padding: 10px 0; */
-  font-size: 1em;
-  display: none;
-}
-
-.page a {
-  color: #000;
-}
+.page a { color: #000; }
 
 hr {
   display: inline;
   border: none;
   color: #ccc;
 }
-hr::before {
-  content: " /// ";
-}
+hr::before { content: " /// "; }
+
+header, section { margin-bottom: 4mm; }
+section:last-of-type { margin-bottom: 0; }
+
 /*****************************************************\
 HEADER
 \*****************************************************/
 
-
 header {
-  color: #fff;
   display: flex;
-  align-items: center;
-  padding: .3cm;
   flex-direction: row;
+  align-items: center;
+  background : linear-gradient(-45deg, #8BB8D4, #b490ca);
+  color: #fff;
+  flex-shrink: 0;
+  padding: 0.3cm;
+}
+
+header h1, header h2 { margin: 0; }
+header h1 {
+  text-transform: uppercase;
+  font-size: 2.3em;
+  border: 1.6mm solid #FFF;
+  border-left: none;
+  border-right: none;
+  padding: 1.2mm 0mm;
+}
+header h2 { font-size: 1.9em; }
+header ul {
+  order: 0;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  flex-grow: 2;
+}
+header ul li {
+  list-style: none;
+  margin: 1mm 0;
+}
+header a {
+  color: #fff !important;
+  text-decoration: none;
 }
 
 header img {
@@ -72,30 +89,6 @@ header img {
   background: #FFF;
   margin-left: .5cm;
 }
-header .titles h1,
-header .titles h2 {
-  margin: 0;
-  padding: 0;
-}
-header .titles h1 {
-  text-transform: uppercase;
-  margin-top: 0.3cm;
-}
-
-header ul  {
-  order: 0;
-  flex-grow: 2;
-  padding: 0;
-  margin: 0;
-  text-align: right;
-}
-header ul li {
-  list-style: none;
-}
-header a {
-  color: #fff !important;
-  text-decoration: none;
-}
 
 /*****************************************************\
 COMPETENCES
@@ -104,95 +97,107 @@ COMPETENCES
 #skills {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: .3cm solid #FFF;
-  border-bottom: .3cm solid #FFF;
+  grid-gap: 3mm;
 }
 
 #skills .skill {
   display: flex;
   flex-direction: column;
-  border: 0.5mm solid #FFF;
-}
-
-
-#skills .skill:first-child {
-  border-left : none;
-  border-top : none;
-}
-#skills .skill:nth-child(2) {
-  border-top : none;
-  border-right : none;
-}
-#skills .skill:nth-child(3) {
-  border-bottom : none;
-  border-left : none;
-}
-#skills .skill:last-child {
-  border-right : none;
-  border-bottom : none;
 }
 
 #skills .skill h3{
-  margin: 1.3mm;
-  margin-bottom: 0.5mm;
-  padding-bottom: 0.8mm;
   color: #fff;
-  font-size: 1em;
-  /* flex-grow: 1; */
-}
-#skills .skill .skill-content{
-  padding: 10px 5px;
-  padding: .25cm .15cm;
+  background: var(--bg-color);
+  background: #9BA8D0;
+  font-size: 1.1em;
+  padding: 1mm 2mm;
   margin: 0;
-  background: rgba(255, 255, 255, 1);
-  flex-grow: 1;
-
+  margin-bottom: 2mm;
 }
 
 #skills .skill .skill-content [class^='fa']{
-  color: #b490ca;
-  width: 1.8rem;
+  color: #9AABD1;
+  width: .7cm;
+}
+
+#skills .skill .skill-content{ line-height: 1.35em; }
+
+#skills .skill:nth-child(1) h3 {
+  background : linear-gradient(-45deg, #9AABD0, #A69ECD);
+}
+#skills .skill:nth-child(2) h3 {
+  background : linear-gradient(-45deg, #8EB8D3, #9AAAD0);
+}
+#skills .skill:nth-child(3) h3 {
+  background : linear-gradient(-45deg, #94B1D3, #9FA4CF);
+}
+#skills .skill:nth-child(4) h3 {
+  background : linear-gradient(-45deg, #88BDD5, #93B2D2);
 }
 
 /*****************************************************\
 EXPERIENCES
 \*****************************************************/
 
-#experiences .exp {
-}
+
 #experiences .exp h3 {
   display: flex;
   margin: 0;
   padding: 0;
-  align-items: center;
   font-size: 1em;
+
+  position: relative;
 }
 #experiences .exp .exp-date {
   color: #fff;
-  padding: 0 5px;
+  padding: 1mm 2mm;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  font-size: 1.1em;
 }
 
 #experiences .exp .exp-title {
-  background: #fff;
-  margin-top: 2px;
-  /* margin: 0; */
-  padding: 5px 10px;
+  background: #FFF;
   flex-grow: 1;
 
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  padding-left: 5px;
+
+  position: relative;
 }
+/* HACK to avoid small borders */
+#experiences .exp .exp-title { box-shadow: 2px 2px 0 0 #FFF }
+
 #experiences .exp .exp-content {
-  background: #fff;
-  padding: 5px 0 20px 0;
+  margin-top : 2mm;
+  margin-bottom: 4.5mm;
+  line-height: 1.35em;
+}
+#experiences .exp:last-child .exp-content {
+  margin-bottom: 0;
 }
 
+#experiences .exp:nth-child(1) h3{ background: #97AED1;}
+#experiences .exp:nth-child(2) h3{ background: #91B3D2;}
+#experiences .exp:nth-child(3) h3{ background: #8CB8D3;}
+#experiences .exp:nth-child(4) h3{ background: #87BDD5;}
+#experiences .exp:nth-child(5) h3{ background: #83C2D6;}
+#experiences .exp:nth-child(6) h3{ background: #7EC6D7;}
 
 /*****************************************************\
 BOTTOM PART
 \*****************************************************/
 
 #bottom {
+  /* background : linear-gradient(-45deg, #5ee7df, #81C3D6); */
+
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-gap: 3mm;
 }
 
 #bottom h2 {
@@ -204,17 +209,17 @@ BOTTOM PART
   text-align: left;
 }
 
+#bottom p { margin: 2px 0; }
+
 /*****************************************************\
 AUTRE INFOS
 \*****************************************************/
 
-
 #autre {
+  background : linear-gradient(-45deg, #72D3DA, #81C3D6);
   padding: 5px;
 }
-#autre strong {
-  color: #fff;
-}
+#autre strong { color: #fff; }
 #autre ul {
   margin: 0;
   padding: 0;
@@ -224,25 +229,33 @@ AUTRE INFOS
   margin: 0;
   margin-bottom: 4px;
 }
-#autre hr {
-  color: #fff;
-}
 
+#autre span {
+  display: inline;
+  border: none;
+}
+#autre span::after {
+  content: " /// ";
+  color: #FFF;
+}
 
 /*****************************************************\
 FORMATION
 \*****************************************************/
 
 #formation {
-  border-left: 5px solid #FFF;
+  background : linear-gradient(-45deg, #5EE7DF, #77CED9);
+
+  /* border-left: 1mm solid #FFF; */
   text-align: right;
-  padding: 5px;;
+  padding: 5px;
+  /* background: var(--bg-color); */
 }
 
 #formation .form {
   display: flex;
   flex-direction: row-reverse;
-  margin: 5px 0;
+  margin: 1.2mm 0;
 }
 #formation .form span {
   height: 20px;
@@ -282,10 +295,9 @@ FORMATION
 }
 
 /*****************************************************\
-FOOTER = remaining space : color in white
+FOOTER = remaining space
 \*****************************************************/
 
 footer {
-  background: #fff;
   flex-grow: 1;
 }
