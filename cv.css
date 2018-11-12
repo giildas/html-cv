@@ -109,7 +109,7 @@ COMPETENCES
   color: #fff;
   background: var(--bg-color);
   background: #9BA8D0;
-  font-size: 1.17em;
+  font-size: 1.1em;
   padding: 1mm 2mm;
   margin: 0;
   margin-bottom: 2mm;
@@ -139,24 +139,39 @@ COMPETENCES
 EXPERIENCES
 \*****************************************************/
 
+
 #experiences .exp h3 {
   display: flex;
   margin: 0;
   padding: 0;
   font-size: 1em;
+
+  position: relative;
 }
 #experiences .exp .exp-date {
   color: #fff;
-  padding: 1mm;
+  padding: 1mm 2mm;
   display: flex;
   align-items: center;
+  position: relative;
+
+  font-size: 1.1em;
 }
 
 #experiences .exp .exp-title {
-  padding:  1mm;
-  border-top: .5mm solid;
+  background: #FFF;
   flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  padding-left: 5px;
+
+  position: relative;
 }
+/* HACK to avoid small borders */
+#experiences .exp .exp-title { box-shadow: 2px 2px 0 0 #FFF }
+
 #experiences .exp .exp-content {
   margin-top : 2mm;
   margin-bottom: 4.5mm;
@@ -166,19 +181,12 @@ EXPERIENCES
   margin-bottom: 0;
 }
 
-#experiences .exp:nth-child(1) .exp-title  { border-color: #97AED1;}
-#experiences .exp:nth-child(1) .exp-date { background: #97AED1;}
-#experiences .exp:nth-child(2) .exp-title  { border-color: #91B3D2;}
-#experiences .exp:nth-child(2) .exp-date { background: #91B3D2;}
-#experiences .exp:nth-child(3) .exp-title  { border-color: #8CB8D3;}
-#experiences .exp:nth-child(3) .exp-date { background: #8CB8D3;}
-#experiences .exp:nth-child(4) .exp-title  { border-color: #87BDD5;}
-#experiences .exp:nth-child(4) .exp-date { background: #87BDD5;}
-#experiences .exp:nth-child(5) .exp-title  { border-color: #83C2D6;}
-#experiences .exp:nth-child(5) .exp-date { background: #83C2D6;}
-#experiences .exp:nth-child(6) .exp-title  { border-color: #7EC6D7;}
-#experiences .exp:nth-child(6) .exp-date { background: #7EC6D7;}
-
+#experiences .exp:nth-child(1) h3{ background: #97AED1;}
+#experiences .exp:nth-child(2) h3{ background: #91B3D2;}
+#experiences .exp:nth-child(3) h3{ background: #8CB8D3;}
+#experiences .exp:nth-child(4) h3{ background: #87BDD5;}
+#experiences .exp:nth-child(5) h3{ background: #83C2D6;}
+#experiences .exp:nth-child(6) h3{ background: #7EC6D7;}
 
 /*****************************************************\
 BOTTOM PART
@@ -201,6 +209,8 @@ BOTTOM PART
   text-align: left;
 }
 
+#bottom p { margin: 2px 0; }
+
 /*****************************************************\
 AUTRE INFOS
 \*****************************************************/
@@ -219,8 +229,15 @@ AUTRE INFOS
   margin: 0;
   margin-bottom: 4px;
 }
-#autre hr { color: #fff; }
 
+#autre span {
+  display: inline;
+  border: none;
+}
+#autre span::after {
+  content: " /// ";
+  color: #FFF;
+}
 
 /*****************************************************\
 FORMATION
